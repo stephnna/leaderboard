@@ -1,0 +1,38 @@
+h1 {
+  text-align: center;
+}
+
+.recent-con,
+.main {
+  display: flex;
+}
+
+.recent-con {
+  align-items: center;
+}
+
+.main {
+  justify-content: center;
+}
+
+.leaderb-con {
+  margin-right: 64px;
+}
+
+#leaderboard {
+  border: 3px solid black;
+}
+
+.recent {
+  margin-right: 24px;
+}
+
+.btn-style {
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 5px 5px;
+}
+
+.score-container {
+  padding-left: 8px;
+}
