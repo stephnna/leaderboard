@@ -1,6 +1,7 @@
-h1{
+h1 {
   text-align: center;
 }
+
 .recent-con,
 .main {
   display: flex;
