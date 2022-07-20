@@ -1,5 +1,5 @@
 export default class LeaderBoard {
-  // Initializations
+  // Initialization
   constructor() {
     this.url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/tLLmHQIVXj0SbcfXAHdh/scores';
     this.leaderBoard = document.getElementById('leaderboard');
