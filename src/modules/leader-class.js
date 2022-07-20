@@ -1,63 +1,69 @@
 export default class LeaderBoard {
   // Initializations
   constructor() {
-    this.leader = [];
+    this.url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/tLLmHQIVXj0SbcfXAHdh/scores';
     this.leaderBoard = document.getElementById('leaderboard');
     this.button = document.getElementById('add-scores');
+    this.refreshButton = document.getElementById('refresh');
   }
 
-  // display book
-  displayBooks(book) {
+  // display scores
+  displayScores(score) {
     let bookContainer = '';
-    book.forEach((arrayItem, index) => {
+    score.forEach((arrayItem, index) => {
       const bookContent = `
-    <div id="${index}" class="score-container">${arrayItem.name}: ${arrayItem.score}</div>       
+    <div id="${index}" class="score-container">${arrayItem.user}: ${arrayItem.score}</div>       
     `;
       bookContainer += bookContent;
     });
     this.leaderBoard.innerHTML = bookContainer;
   }
 
-  // get books in html page if it exist in local storage
-  getLocalStorageData() {
-    const data = JSON.parse(localStorage.getItem('leader'));
-    if (data !== null) {
-      this.displayBooks(data);
+  //  post scores to api
+  addScore = async (data) => {
+    const response = await fetch(this.url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    return result;
+  };
 
-      const scoreContent = document.querySelectorAll('.score-container');
-      scoreContent.forEach((item, index) => {
-        if (index % 2 !== 0) {
-          document.getElementById(item.id).style.backgroundColor = '#D0D0D0';
-        }
-      });
-    } else {
-      this.awesomeBooks.style.display = 'none';
+  // get scores from api
+getScores = async () => {
+  const response = await fetch(this.url);
+  const { result } = await response.json().catch((error) => new Error(error));
+  this.displayScores(result);
+  const scoreContent = document.querySelectorAll('.score-container');
+  scoreContent.forEach((item, index) => {
+    if (index % 2 !== 0) {
+      document.getElementById(item.id).style.backgroundColor = '#D0D0D0';
     }
-  }
+  });
+  return result;
+};
 
-  // Render book
-  AddOnClick() {
-    this.button.onclick = () => {
-      const nameValue = document.getElementById('name').value;
-      const scoreValue = document.getElementById('score').value;
-      const data = JSON.parse(localStorage.getItem('leader'));
-      if (data !== null) {
-        this.leader = data;
-      }
-      if (nameValue === '' || scoreValue === '') {
-        return;
-      }
-      const newLeader = { name: nameValue, score: scoreValue };
-      this.leader.push(newLeader);
-      localStorage.setItem('leader', JSON.stringify(this.leader));
-      this.getLocalStorageData();
-      window.location.reload();
-    };
-  }
+//  display score added to api when refresh button is clicked
+refresh() {
+  this.refreshButton.addEventListener('click', async () => {
+    await this.getScores();
+  });
+}
 
-  getBooks() {
-    if (localStorage.getItem('leader') !== null) {
-      this.getLocalStorageData();
+// Render book
+AddOnClick() {
+  this.button.onclick = async (e) => {
+    e.preventDefault();
+    const nameValue = document.getElementById('name').value;
+    const scoreValue = document.getElementById('score').value;
+    if (nameValue === '' || scoreValue === '') {
+      return;
     }
-  }
+    const newLeader = { user: nameValue, score: scoreValue };
+    this.addScore(newLeader);
+  };
+}
 }
