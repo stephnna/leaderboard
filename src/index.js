@@ -1,6 +1,8 @@
 import './style.css';
 import LeaderBoard from './modules/leader-class.js';
 
-const newBooks = new LeaderBoard();
-newBooks.getBooks();
-newBooks.AddOnClick();
+const newScores = new LeaderBoard();
+
+newScores.getScores();
+newScores.AddOnClick();
+newScores.refresh();
