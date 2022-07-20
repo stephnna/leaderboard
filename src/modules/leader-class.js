@@ -29,7 +29,12 @@ export default class LeaderBoard {
       body: JSON.stringify(data),
     });
     const result = await response.json();
-    return result;
+    //  display message when score is added
+    const scoreMessage = document.getElementById('add-message');
+    scoreMessage.innerHTML = result.result;
+    setTimeout(() => {
+      scoreMessage.style.visibility = 'hidden';
+    }, 3000);
   };
 
   // get scores from api
@@ -43,7 +48,6 @@ getScores = async () => {
       document.getElementById(item.id).style.backgroundColor = '#D0D0D0';
     }
   });
-  return result;
 };
 
 //  display score added to api when refresh button is clicked
@@ -64,6 +68,7 @@ AddOnClick() {
     }
     const newLeader = { user: nameValue, score: scoreValue };
     this.addScore(newLeader);
+    document.getElementById('myform').reset();
   };
 }
 }

@@ -36,3 +36,8 @@ h1 {
 .score-container {
   padding-left: 8px;
 }
+
+#add-message {
+  margin-top: 16px;
+  color: green;
+}
