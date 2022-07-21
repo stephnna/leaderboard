@@ -21,6 +21,8 @@ In this project I utilized
 
 [Live view](https://stephnna.github.io/leaderboard/dist/)
 
+![screenshot](./desktop.png)
+
 ## Getting Started
 
 The goal of this project is to:
@@ -65,7 +67,10 @@ For tracking linters errors locally, you need to follow these steps:
 
 1. `npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x`
 2. `npx eslint .`
-[Consume the API](https://www.notion.so/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3)
+
+
+- Consume the API
+[Follow this Link](https://www.notion.so/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3)
 
 ## 🤝 Contributing
 
