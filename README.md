@@ -42,7 +42,7 @@ In this project I setup up a JavaScript project for the Leaderboard list app, us
 - Create a github repository.
 
 ## Setup
-- `git clone git@github.com:assadounto/Leader-board.git`
+- `https://github.com/stephnna/leaderboard.git`
 - `cd leader-board/`
 - Install packages:  `npm install`
 - Start Live Server: `npm run dev`
