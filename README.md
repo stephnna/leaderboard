@@ -19,7 +19,7 @@ In this project I utilized
 
 ## Deployment
 
-[Live view](https://stephnna.github.io/leaderboard/dist)
+[Live view](https://stephnna.github.io/leaderboard/dist/)
 
 ## Getting Started
 
