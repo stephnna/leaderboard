@@ -1,5 +1,16 @@
+body {
+  background-color: #f0a3bc;
+  font-family: cursive, Geneva, Tahoma, sans-serif;
+}
+
 h1 {
   text-align: center;
+}
+
+h1,
+h2,
+.recent {
+  color: #9b45b2;
 }
 
 .recent-con,
@@ -20,7 +31,8 @@ h1 {
 }
 
 #leaderboard {
-  border: 3px solid black;
+  border: none;
+  border-radius: 25px;
 }
 
 .recent {
@@ -29,15 +41,40 @@ h1 {
 
 .btn-style {
   cursor: pointer;
-  background-color: white;
-  box-shadow: 5px 5px;
+  font-family: cursive, Geneva, Tahoma, sans-serif;
+  background-color: #eb6b40;
+  border-radius: 25px;
+  border: none;
+  transition-duration: 0.3s;
+}
+
+.btn-style:hover {
+  background-color: #d73b07;
+  transform: scale(1.2);
+}
+
+.btn-style:active {
+  transform: scale(0.9);
 }
 
 .score-container {
   padding-left: 8px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 #add-message {
   margin-top: 16px;
   color: green;
+}
+
+.input-style {
+  border-color: #9b45b2;
+  border-radius: 25px;
+  background-color: pink;
+}
+
+.input-style::placeholder {
+  font-family: cursive, Geneva, Tahoma, sans-serif;
+  color: #d73b07;
 }

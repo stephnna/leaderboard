@@ -28,14 +28,8 @@ export default class LeaderBoard {
       },
       body: JSON.stringify(data),
     });
-    const result = await response.json();
-    //  display message when score is added
-    const scoreMessage = document.getElementById('add-message');
-    scoreMessage.innerHTML = result.result;
-    setTimeout(() => {
-      scoreMessage.style.visibility = 'hidden';
-    }, 3000);
-  };
+    return response.json;
+  }
 
   // get scores from api
 getScores = async () => {
@@ -45,10 +39,10 @@ getScores = async () => {
   const scoreContent = document.querySelectorAll('.score-container');
   scoreContent.forEach((item, index) => {
     if (index % 2 !== 0) {
-      document.getElementById(item.id).style.backgroundColor = '#D0D0D0';
-    }
+      document.getElementById(item.id).style.backgroundColor = '#eb6b40';
+    } else document.getElementById(item.id).style.backgroundColor = '#9b45b2';
   });
-};
+}
 
 //  display score added to api when refresh button is clicked
 refresh() {
@@ -59,8 +53,7 @@ refresh() {
 
 // Render book
 AddOnClick() {
-  this.button.onclick = async (e) => {
-    e.preventDefault();
+  this.button.onclick = async () => {
     const nameValue = document.getElementById('name').value;
     const scoreValue = document.getElementById('score').value;
     if (nameValue === '' || scoreValue === '') {
