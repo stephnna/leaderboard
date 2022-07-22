@@ -81,7 +81,7 @@ h2,
   background-color: #9b45b2;
 }
 
-.first-color, .second-color{
+.first-color,
+.second-color {
   padding: 16px 0 16px 16px;
 }
-
