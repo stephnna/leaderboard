@@ -64,12 +64,6 @@ h2,
   transform: scale(0.9);
 }
 
-.score-container {
-  padding-left: 8px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-
 .input-style {
   border-color: #9b45b2;
   background-color: pink;
@@ -86,3 +80,8 @@ h2,
 .second-color {
   background-color: #9b45b2;
 }
+
+.first-color, .second-color{
+  padding: 16px 0 16px 16px;
+}
+

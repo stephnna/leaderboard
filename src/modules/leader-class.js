@@ -28,7 +28,7 @@ export default class LeaderBoard {
       },
       body: JSON.stringify(data),
     });
-    return response.json;
+    return response.json();
   }
 
   // get scores from api
@@ -39,12 +39,12 @@ getScores = async () => {
   const scoreContent = document.querySelectorAll('.score-container');
   scoreContent.forEach((item, index) => {
     if (index % 2 !== 0) {
-      document.getElementById(item.id).style.backgroundColor = '#eb6b40';
-    } else document.getElementById(item.id).style.backgroundColor = '#9b45b2';
+      document.getElementById(item.id).className = 'first-color';  
+    } else document.getElementById(item.id).className = 'second-color';   
   });
 }
 
-//  display score added to api when refresh button is clicked
+//  display scores added to api when refresh button is clicked
 refresh() {
   this.refreshButton.addEventListener('click', async () => {
     await this.getScores();
