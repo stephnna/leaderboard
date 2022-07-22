@@ -43,7 +43,7 @@ In this project I setup up a JavaScript project for the Leaderboard list app, us
 
 ## Setup
 - `https://github.com/stephnna/leaderboard.git`
-- `cd leader-board/`
+- `cd leaderboard/`
 - Install packages:  `npm install`
 - Start Live Server: `npm run dev`
 
