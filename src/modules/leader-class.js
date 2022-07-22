@@ -39,8 +39,8 @@ getScores = async () => {
   const scoreContent = document.querySelectorAll('.score-container');
   scoreContent.forEach((item, index) => {
     if (index % 2 !== 0) {
-      document.getElementById(item.id).className = 'first-color';  
-    } else document.getElementById(item.id).className = 'second-color';   
+      document.getElementById(item.id).className = 'first-color';
+    } else document.getElementById(item.id).className = 'second-color';
   });
 }
 
