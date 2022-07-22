@@ -78,3 +78,11 @@ h2,
 .input-style::placeholder {
   color: #d73b07;
 }
+
+.first-color {
+  background-color: #eb6b40;
+}
+
+.second-color {
+  background-color: #9b45b2;
+}
