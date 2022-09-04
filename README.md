@@ -26,7 +26,7 @@ In this project I utilized
 ## Getting Started
 
 The goal of this project is to:
-In this project I setup up a JavaScript project for the Leaderboard list app, using webpack and ES6 features, notably modules. I developed a first working version of the app following a wireframe, but without styling. I consumed the Leaderboard API using JavaScript async and await and added some styling.
+setup up a JavaScript project for the Leaderboard list app, using webpack and ES6 features, notably modules. I developed a first working version of the app following a wireframe, but without styling. I consumed the Leaderboard API using JavaScript async and await and added some styling.
 
 ## Authors
 👤 Ezea Stephen Nnabuike
